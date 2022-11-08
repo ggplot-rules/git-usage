@@ -3,20 +3,20 @@ sods_data <- read.csv("data/stackoverflow-git-data.csv")
 g <- ggplot (
 data = sods _data ,
 mapping = aes ( x = year , y = percentage ) ) +
-geom _ point () +
-geom _ smooth ( method = "lm", colour = " darkgrey ") +
-geom _ text (
+geom_point () +
+geom_smooth ( method = "lm", colour = " darkgrey ") +
+geom_text (
 aes ( x = 2020 , y = 82.8 , label = " only GitHub ") ,
 size = 3 ,
-nudge _x = 0.2 ,
-nudge _y = -6) +
+nudge_x = 0.2 ,
+nudge_y = -6) +
 labs (
 x = " Year ",
 y = " Percentage who used git") +
 ylim (c (0 ,100) ) +
-theme _bw (),
-    title = "Git usage has increased ",
-    subtitle = " Data from Stackoverflow Developer Survey ")
+theme _bw ()
+    title = "Git usage has increased "
+    subtitle = " Data from Stackoverflow Developer Survey "
 ggsave ( filename = "out/git - usage .png",
          plot = g ,
          height = 7.4 ,
